@@ -1,7 +1,6 @@
 import * as P5 from 'p5';
 import Projectile from './projectile';
 import { getRandomInt } from './utils/getRandomInt';
-import { dither } from './dither';
 
 class FlyingWindows {
   container:HTMLDivElement;
@@ -12,7 +11,7 @@ class FlyingWindows {
   frequency:number = 1.4;
   p5instance?:P5;
   pixelDensity:number = 2;
-  clear:boolean = true;
+  clear:boolean|undefined = true;
 
   constructor(container:HTMLDivElement, clear?:boolean, frameRate?:number, speed?:number, frequency?:number, pixelDensity?:number) {
     this.container = container;
@@ -90,7 +89,7 @@ class FlyingWindows {
       }
       
       if(this.projectiles.length > 0) {
-        this.projectiles.forEach((projectile:Projectile, pIndex:number) => {
+        this.projectiles.forEach((projectile:Projectile, _pIndex:number) => {
           projectile.update();
         });
       }
@@ -99,4 +98,4 @@ class FlyingWindows {
   }
 }
 
-export default FlyingWindows;
+export { FlyingWindows };

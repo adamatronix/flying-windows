@@ -1,5 +1,5 @@
 import './style.css'
-import FlyingWindows from './flying-windows.ts'
+import { FlyingWindows } from './flying-windows.ts'
 
 (function() {
   let imageVal = 0;

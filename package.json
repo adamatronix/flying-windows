@@ -1,14 +1,24 @@
 {
-  "name": "flying-windows",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@adamatronix/flying-windows",
+  "version": "1.0.0",
   "type": "module",
+  "module": "./dist/flying-windows.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/flying-windows.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@types/node": "^20.6.0",
     "@types/p5": "^1.7.0",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
